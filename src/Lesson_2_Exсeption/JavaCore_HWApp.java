@@ -13,7 +13,7 @@
 // Задача 3. В методе main() вызвать полученный метод, обработать возможные исключения MySizeArrayException
 // и MyArrayDataException и вывести результат расчёта.
 
-package Lesson_2_Exeption;
+package Lesson_2_Exсeption;
 
 public class JavaCore_HWApp {
 
@@ -25,18 +25,18 @@ public class JavaCore_HWApp {
     public static void main(String[] args) {
 
         // 1.Вызов метода functionMyException с невалидным значением по размерности массива
-        // для отражения факта генерации исключений (объектов) ArraySizeExeption
-        System.out.println("Пример обработки исключения ArraySizeExeption для функции functionMyException.\nНевалидные данные по размерности матрицы:");
+        // для отражения факта генерации исключений (объектов) ArraySizeException
+        System.out.println("Пример обработки исключения ArraySizeException для функции functionMyException.\nНевалидные данные по размерности матрицы:");
 
         // массив матрица 1 х 1:
         String[][] array_1x1 = new String[1][1];
         try {
-            // При вызове функции functionMyException c параметром array_5x5 будет создан обект класса ArraySizeExeption,
+            // При вызове функции functionMyException c параметром array_5x5 будет создан обект класса ArraySizeException,
             // который будет размещён на вершине стека, если не появится иных ошибок
             functionMyException(array_1x1);     // вызов функции с невалидными данными
-        } catch (ArraySizeExeption MyArraySizeExeption) { // создание объекта класса ArraySizeExeption
-            // вызов метода printStackTrace объекта MyArraySizeExeption, дочернего по отнонению к классу Exception
-            MyArraySizeExeption.printStackTrace();
+        } catch (ArraySizeException myArraySizeException) { // создание объекта класса ArraySizeException
+            // вызов метода printStackTrace объекта MyArraySizeException, дочернего по отнонению к классу Exception
+            myArraySizeException.printStackTrace();
         }
 
         // массив вектор 1 х 4:
@@ -45,9 +45,9 @@ public class JavaCore_HWApp {
             // При вызове функции functionMyException c параметром array_3x3 будет создан обект класса ArraySizeExeption,
             // который будет размещён на вершине стека, если не появится иных ошибок
             functionMyException(array_1x4);     // вызов функции с невалидными данными
-        } catch (ArraySizeExeption MyArraySizeExeption) { // создание объекта класса ArraySizeExeption
-            // вызов метода printStackTrace объекта MyArraySizeExeption, дочернего по отнонению к классу Exception
-            MyArraySizeExeption.printStackTrace();
+        } catch (ArraySizeException myArraySizeException) { // создание объекта класса ArraySizeExeption
+            // вызов метода printStackTrace объекта MyArraySizeException, дочернего по отнонению к классу Exception
+            myArraySizeException.printStackTrace();
         }
 
         // массив вектор 8 х 2:
@@ -56,9 +56,9 @@ public class JavaCore_HWApp {
             // При вызове функции functionMyException c параметром array_3x3 будет создан обект класса ArraySizeExeption,
             // который будет размещён на вершине стека, если не появится иных ошибок
             functionMyException(array_8x2);     // вызов функции с невалидными данными
-        } catch (ArraySizeExeption MyArraySizeExeption) { // создание объекта класса ArraySizeExeption
+        } catch (ArraySizeException myArraySizeException) { // создание объекта класса ArraySizeExeption
             // вызов метода printStackTrace объекта MyArraySizeExeption, дочернего по отнонению к классу Exception
-            MyArraySizeExeption.printStackTrace();
+            myArraySizeException.printStackTrace();
         }
 
         // массив матрица 3 х 3:
@@ -67,9 +67,9 @@ public class JavaCore_HWApp {
             // При вызове функции functionMyException c параметром array_3x3 будет создан обект класса ArraySizeExeption,
             // который будет размещён на вершине стека, если не появится иных ошибок
             functionMyException(array_3x3);     // вызов функции с невалидными данными
-        } catch (ArraySizeExeption MyArraySizeExeption) { // создание объекта класса ArraySizeExeption
+        } catch (ArraySizeException myArraySizeException) { // создание объекта класса ArraySizeExeption
             // вызов метода printStackTrace объекта MyArraySizeExeption, дочернего по отнонению к классу Exception
-            MyArraySizeExeption.printStackTrace();
+            myArraySizeException.printStackTrace();
         }
 
         // массив матрица 5 х 5:
@@ -78,9 +78,9 @@ public class JavaCore_HWApp {
             // При вызове функции functionMyException c параметром array_5x5 будет создан обект класса ArraySizeExeption,
             // который будет размещён на вершине стека, если не появится иных ошибок
             functionMyException(array_5x5);     // вызов функции с невалидными данными
-        } catch (ArraySizeExeption MyArraySizeExeption) { // создание объекта класса ArraySizeExeption
+        } catch (ArraySizeException myArraySizeException) { // создание объекта класса ArraySizeExeption
             // вызов метода printStackTrace объекта MyArraySizeExeption, дочернего по отнонению к классу Exception
-            MyArraySizeExeption.printStackTrace();
+            myArraySizeException.printStackTrace();
         }
 
 
@@ -95,7 +95,7 @@ public class JavaCore_HWApp {
         try {
             CounterBadItem = 0;
             functionMyException(array_4x4_correctData);     // вызов функции с валидными данными
-        } catch (ArraySizeExeption e) {
+        } catch (ArraySizeException e) {
             System.out.println("Функция отработала некорректно ... \n Содержимое стека:");
             e.printStackTrace();
         } finally {
@@ -127,7 +127,7 @@ public class JavaCore_HWApp {
             // Массив содержит смешанные данные (валидные и невалидные)
             try {
                 functionMyException(array_4x4_uncorrectData);
-            } catch (ArraySizeExeption | ArrayDataExeption MyException) {
+            } catch (ArraySizeException | ArrayDataException MyException) {
                 System.out.println("Сгенерировано исключение \"ArrayDataExeption\" с порядковым номером \"" + CounterBadItem + "\" , блок кода отработал корректно... Содержимое стека см. ниже!");
                 MyException.printStackTrace();
             } finally {
@@ -143,24 +143,24 @@ public class JavaCore_HWApp {
         } while (!ExitInCycle);
     }
 
-    // Исключения (Exeptions) - объекты, генерируемые во время появления ошибочных ситуаций и содержащие информацию о
+    // Исключения (Exсeptions) - объекты, генерируемые во время появления ошибочных ситуаций и содержащие информацию о
     // последних, но в отличии от ошибок (Error), исключения могут быть перехвачены программой, обработаны, что
     // предотвратит завершение работы приложения. Ислючения делятся на две группы:
-    // - класс Exeptions и его подклассы: исключения, которые обязательно должны быть перехвачены программой (checked)
-    // - класс RuntimeExeptions и его продклассы: исключения, охватывающие ситуации такие, как деление на ноль или
-    // ошибочная индексация массивов (Unchecked)
+    // - класс Exсeptions и его подклассы: исключения, которые обязательно должны быть перехвачены программой (checked)
+    // - класс RuntimeExсeptions и его продклассы: исключения, охватывающие ситуации такие, как деление на ноль или
+    // ошибочная индексация массивов (unchecked)
 
     // Метод для генерации исключений
-    public static void functionMyException(String[][] array) throws ArrayDataExeption, ArraySizeExeption {
+    public static void functionMyException(String[][] array) throws ArrayDataException, ArraySizeException {
         // Условие для генерациии исключения по размерности массива
         if ((array.length != 4) || (array[0].length != 4)) {
-            // Создание объекта типа ArraySizeExeption, который является потомком класса Exception
-            ArraySizeExeption MyArraySizeExeption = new ArraySizeExeption("ArraySizeExeption: в функцию передан массив размерности " + array.length + " x " + array[0].length + ", что отличается от размерности 4 x 4.");
+            // Создание объекта типа ArraySizeException, который является потомком класса Exception
+            ArraySizeException myArraySizeException = new ArraySizeException("ArraySizeException: в функцию передан массив размерности " + array.length + " x " + array[0].length + ", что отличается от размерности 4 x 4.");
             // Генерация исключения
-            throw MyArraySizeExeption;
+            throw myArraySizeException;
         } else {
-            // Пример генерации объекта класса ArraySizeExeption (потомок класса Exception):
-            // throw new ArraySizeExeption("MyArraySizeExeption: в функцию передан массив размерности равной 4 x 4 ... всё окей на данном этапе!");
+            // Пример генерации объекта класса ArraySizeExсeption (потомок класса Exception):
+            // throw new ArraySizeExсeption("MyArraySizeExсeption: в функцию передан массив размерности равной 4 x 4 ... всё окей на данном этапе!");
 
             // Создание массива буффера для хранения промежуточных данных
             // выделение памяти под будущий с размерами эквивалентными массиву типа String, передаваемому в виде параметра
@@ -212,7 +212,7 @@ public class JavaCore_HWApp {
                         }
 
                         // Генерация исключения с номером, значением ячейки и адресом
-                        throw new ArrayDataExeption("ArrayDataExeption №" + CounterBadItem + ": \"" + array[i][j] + "\" - невозможно преобразовать к типу Integer, адресс элемента в массиве: [" + i + "][" + j + "]");
+                        throw new ArrayDataException("ArrayDataException №" + CounterBadItem + ": \"" + array[i][j] + "\" - невозможно преобразовать к типу Integer, адресс элемента в массиве: [" + i + "][" + j + "]");
                     }
 
                     // Установка переменной printInfoIntegerItem в исходное состояние
